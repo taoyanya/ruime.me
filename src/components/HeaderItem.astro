@@ -1,0 +1,12 @@
+---
+interface Props {
+  name: string;
+  to: string;
+}
+
+const { name, to } = Astro.props;
+---
+
+<div class="header-nav-item ~cp">
+  <a href=`${to}`>{name}</a>
+</div>

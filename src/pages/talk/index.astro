@@ -1,0 +1,43 @@
+---
+import { getCollection } from "astro:content";
+import Layout from "../../layouts/Layout.astro";
+import PostItem from "../../components/PostItem.astro";
+
+const rawTalks = await getCollection("talks");
+const talks = rawTalks
+  .sort((a, b) => {
+    return a.data.date < b.data.date ? 1 : -1;
+  })
+  .map((talk) => {
+    const tempDate = new Date(talk.data.date);
+    const formattedDate = `${tempDate.getFullYear()}.${
+      tempDate.getMonth() + 1
+    }.${tempDate.getDate()}`;
+
+    return {
+      ...talk,
+      title: talk.data.title,
+      date: formattedDate,
+    };
+  });
+---
+
+<Layout>
+  <h1 class="text-3xl flex mb-30px border-b pb-2px box-border">
+    <p class="font-sans">Talk</p>
+    <p class="mx-2">/</p>
+    <p class="font-cn">日常闲聊</p>
+  </h1>
+
+  <div>
+    {
+      talks.map((item) => {
+        return (
+          <a href={`/talk/${item.slug}`}>
+            <PostItem date={item.date} title={item.title} />
+          </a>
+        );
+      })
+    }
+  </div>
+</Layout>

@@ -1,0 +1,17 @@
+---
+
+import Layout from "./Layout.astro";
+---
+
+<Layout>
+  <div class="prose">
+    <slot />
+  </div>
+</Layout>
+
+<style is:global>
+  html,
+  body {
+    height: 100%;
+  }
+</style>

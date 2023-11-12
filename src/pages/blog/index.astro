@@ -1,0 +1,42 @@
+---
+import { getCollection } from "astro:content";
+import Layout from "../../layouts/Layout.astro";
+import PostItem from "../../components/PostItem.astro";
+
+const rawBlogs = await getCollection("blogs");
+const blogs = rawBlogs
+  .sort((a, b) => {
+    return a.data.date < b.data.date ? 1 : -1;
+  })
+  .map((blog) => {
+    const tempDate = new Date(blog.data.date);
+    const formattedDate = `${tempDate.getFullYear()}.${
+      tempDate.getMonth() + 1
+    }.${tempDate.getDate()}`;
+
+    return {
+      ...blog,
+      title: blog.data.title,
+      date: formattedDate,
+    };
+  });
+---
+
+<Layout>
+  <h1 class="text-3xl flex mb-30px border-b pb-2px box-border">
+    <p class="font-sans">Blog</p>
+    <p class="mx-2">/</p>
+    <p class="font-cn">技术性文章</p>
+  </h1>
+  <div>
+    {
+      blogs.map((item) => {
+        return (
+          <a href={`/blog/${item.slug}`}>
+            <PostItem date={item.date} title={item.title} />
+          </a>
+        );
+      })
+    }
+  </div>
+</Layout>

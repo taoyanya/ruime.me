@@ -1,0 +1,44 @@
+---
+import { ViewTransitions } from "astro:transitions";
+---
+
+<header
+  class="h-60px flex justify-between items-center px-20px box-border"
+  transition-style
+>
+  <ViewTransitions />
+  <a href="/">
+    <img
+      src="/icon.jpg"
+      class="w-50px h-50px rounded-md shadow-md ~cp"
+      alt=""
+    />
+  </a>
+  <div class="flex justify-between items-center">
+    <div class="header-nav-item ~cp">
+      <a href="/blog">Blogs</a>
+    </div>
+    <div class="header-nav-item ~cp">
+      <a href="/talk">Talks</a>
+    </div>
+    <div class="header-nav-item ~cp">
+      <a href="/project">Projects</a>
+    </div>
+    <div class="header-nav-item ~cp">
+      <a href="https://github.com/taoyanya" target="_blank">
+        <i class="i-iconoir-github"></i>
+      </a>
+    </div>
+    <div class="header-nav-item ~cp">
+      <a
+        href="https://account.bilibili.com/account/home?spm_id_from=333.1007.0.0"
+        target="_blank"
+      >
+        <i class="i-ri-bilibili-line"></i>
+      </a>
+    </div>
+    <!-- <div class="light-mode header-nav-item ~cp">
+      <i class="i-iconoir-sun-light"></i>
+    </div> -->
+  </div>
+</header>
