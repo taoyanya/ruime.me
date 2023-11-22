@@ -1,10 +1,13 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Hero from "../components/Hero.astro";
+import FriendlyLink from "../components/FriendlyLink.astro";
+import RedPricot from "../components/RedPricot.astro";
 ---
 
 <Layout>
   <Hero />
+  <RedPricot />
   <div class="mt-50px font-mono text-lg">
     <div>
       <a class="text-xl underline ~cp" href="/blog">Blogs:</a>
@@ -20,24 +23,6 @@ import Hero from "../components/Hero.astro";
     </div>
   </div>
   <div class="mt-50px">
-    <p class="text-xl mb-5px">Find me on:</p>
-    <div class="flex gap-x-20px">
-      <a
-        class="flex items-center text-lg border-b border-gray-300 hover:border-dark-300 transition-200 ~cp"
-        href="https://github.com/taoyanya"
-        target="_blank"
-      >
-        <i class="i-ri-github-fill"></i>
-        <div class="font-mono ml-5px">Github</div>
-      </a>
-      <a
-        class="flex items-center text-lg border-b border-gray-300 hover:border-dark-300 transition-200 ~cp"
-        href="https://space.bilibili.com/334948417?spm_id_from=333.1007.0.0"
-        target="_blank"
-      >
-        <i class="i-ri-bilibili-fill"></i>
-        <div class="font-mono ml-5px">Bilibili</div>
-      </a>
-    </div>
+    <FriendlyLink />
   </div>
 </Layout>

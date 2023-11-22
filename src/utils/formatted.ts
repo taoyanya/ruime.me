@@ -5,7 +5,10 @@ interface Params {
   };
 }
 
-export function formatted(raw: Params[]) {
+export function formatted(raw: Params[] | undefined) {
+  if(!raw) {
+    return []
+  }
   return raw
     .sort((a, b) => {
       return a.data.date < b.data.date ? 1 : -1;

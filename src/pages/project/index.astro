@@ -1,5 +1,14 @@
 ---
+import { getCollection } from "astro:content";
 import Layout from "../../layouts/Layout.astro";
+import Empty from "../../components/Empty.astro";
+import ProjectItem from "../../components/ProjectItem.astro";
+import { formatted } from "../../utils/formatted";
+
+const rawProject = await getCollection("projects");
+
+const projects = formatted(rawProject);
+console.log(projects);
 ---
 
 <Layout>
@@ -8,4 +17,13 @@ import Layout from "../../layouts/Layout.astro";
     <p class="mx-2">/</p>
     <p class="font-cn">灵感项目</p>
   </h1>
+
+  {projects.length === 0 && <Empty />}
+  {
+    projects.length > 0 && (
+      <ProjectItem name="Noteme" desc="a note editor" link="">
+        <i class="i-ri:evernote-line" />
+      </ProjectItem>
+    )
+  }
 </Layout>
