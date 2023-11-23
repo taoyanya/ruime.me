@@ -41,6 +41,7 @@
     curCount: number;
     width: number;
     startPoint: Point;
+    timer: NodeJS.Timeout | null = null;
 
     constructor() {
       this.ctx = canvas.getContext("2d")!;
@@ -63,7 +64,8 @@
       }
       this.curCount++;
       requestAnimationFrame(() => {
-        setTimeout(() => {
+        if (this.timer) clearTimeout(this.timer);
+        this.timer = setTimeout(() => {
           this.draw();
         }, 100);
       });
@@ -111,7 +113,6 @@
 
     randomAngle() {
       const denominator = this.randomNum(4, 10);
-      // const numerator = this.randomNum(1, 2);
       return -(1 / denominator) * Math.PI;
     }
 
