@@ -9,9 +9,9 @@ export default defineConfig({
     presetUno(),
     presetTypography({
       cssExtend: {
-        "code": {
+        code: {
           padding: "1px 1px 1px 1px",
-          "box-sizing": "border-box"
+          "box-sizing": "border-box",
         },
         h2: {
           margin: "0.5rem 0",
@@ -29,6 +29,7 @@ export default defineConfig({
         },
         cn: "ZCOOL XiaoWei",
         wide: "Black Ops One",
+        xs: "Liu Jian Mao Cao",
       },
     }),
     presetIcons({
