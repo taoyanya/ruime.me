@@ -30,8 +30,30 @@ import Header from "../components/Header.astro";
 </html>
 
 <style is:global>
+  :root {
+    --pink: #fecdd3;
+    --white: #fdfdfd;
+  }
+
   html,
   body {
     height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  *::selection {
+    color: var(--white);
+    background-color: var(--pink);
+  }
+
+  *::-moz-selection {
+    color: var(--white);
+    background-color: var(--pink);
+  }
+
+  *::-webkit-selection {
+    color: var(--white);
+    background-color: var(--pink);
   }
 </style>

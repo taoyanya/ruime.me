@@ -1,3 +1,7 @@
+---
+import NotFoundImage from "../components/404Image.astro";
+---
+
 <html lang="en" transition:animate="none">
   <head>
     <meta charset="utf-8" />
@@ -5,6 +9,34 @@
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
     <title>404</title>
+    <style>
+      :root {
+        --pink: #fecdd3;
+        --white: #fdfdfd;
+      }
+
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+      }
+
+      *::selection {
+        color: var(--white);
+        background-color: var(--pink);
+      }
+
+      *::-moz-selection {
+        color: var(--white);
+        background-color: var(--pink);
+      }
+
+      *::-webkit-selection {
+        color: var(--white);
+        background-color: var(--pink);
+      }
+    </style>
   </head>
   <body>
     <div class="h-full ~f-c-c flex-col">
@@ -14,6 +46,7 @@
         <i class="i-ri-arrow-right-circle-line"></i>
         <a href="/">You can click here to right page</a>
       </div>
+      <NotFoundImage />
     </div>
   </body>
 </html>
