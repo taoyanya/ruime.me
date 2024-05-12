@@ -7,10 +7,6 @@ import Header from "../components/Header.astro";
   <head>
     <meta charset="utf-8" />
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-    <!-- <meta http-equiv="Expires" content="0" />
-    <meta http-equiv="Pragma" content="no-cache" />
-    <meta http-equiv="Cache-Control" content="no-cache" />
-    <meta http-equiv="Cache" content="no-cache" /> -->
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
     <title>ruirrr</title>
@@ -19,7 +15,7 @@ import Header from "../components/Header.astro";
     <div id="layout" class="h-full m-auto">
       <Header />
       <article
-        class="w-3/4 m-auto py-30px box-border"
+        class="m-auto py-30px box-border"
         transition:animate={slide({ duration: "0.5s" })}
       >
         <slot />
@@ -30,6 +26,18 @@ import Header from "../components/Header.astro";
 </html>
 
 <style is:global>
+  @media screen and (max-width: 800px) {
+    article {
+      width: 80%;
+    }
+  }
+
+  @media screen and (min-width: 800px) {
+    article {
+      width: 50%;
+    }
+  }
+
   :root {
     --pink: #fecdd3;
     --white: #fdfdfd;

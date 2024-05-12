@@ -1,0 +1,23 @@
+---
+import { COLOR } from "../config";
+
+interface Props {
+  name: string;
+  level: "DEFAULT" | "PRIMARY";
+}
+
+const { name, level } = Astro.props;
+const color = COLOR[level];
+---
+
+<div
+  class="flex flex-col ~cp transition-200 justify-end p-5px box-border w-200px h-160px shadow-md rounded text-light-100"
+  style={{ backgroundColor: color }}
+>
+  <slot>
+    <div class="">{name}</div>
+  </slot>
+  <div class="text-sm">
+    <slot name="sub" />
+  </div>
+</div>

@@ -1,29 +1,25 @@
 ---
 import { getCollection } from "astro:content";
 import Layout from "../../layouts/Layout.astro";
-import Empty from "../../components/Empty.astro";
-import ProjectItem from "../../components/ProjectItem.astro";
+import StrongText from "../../components/StrongText.astro";
 import { formatted } from "../../utils/formatted";
 
 const rawProject = await getCollection("projects");
 
 const projects = formatted(rawProject);
-console.log(projects);
 ---
 
 <Layout>
-  <h1 class="text-3xl flex mb-30px border-b pb-2px box-border">
-    <p class="font-sans">Project</p>
-    <p class="mx-2">/</p>
-    <p class="font-cn">灵感项目</p>
-  </h1>
-
-  {projects.length === 0 && <Empty />}
-  {
-    projects.length > 0 && (
-      <ProjectItem name="Noteme" desc="a note editor" link="">
-        <i class="i-ri:evernote-line" />
-      </ProjectItem>
-    )
-  }
+  <StrongText>Project</StrongText>
+  <div class="mt-20px font-sans text-lg">
+    <p>Hi, i am RuiMe.</p>
+    <p>
+      This section shows some of the tools I made myself to solve problems I
+      encountered in my life and work.
+    </p>
+    <p>
+      I put it here so that I can use it at any time, and I also hope it can
+      help everyone.
+    </p>
+  </div>
 </Layout>

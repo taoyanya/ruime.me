@@ -1,0 +1,42 @@
+---
+import { getCollection } from "astro:content";
+import Layout from "../../layouts/Layout.astro";
+import TagTitle from "../../components/TagTitle.astro";
+import PostItem from "../../components/PostItem.astro";
+import StrongText from "../../components/StrongText.astro";
+
+const rawSummary = await getCollection("summary");
+const summary = rawSummary
+  .sort((a, b) => {
+    return a.data.date < b.data.date ? 1 : -1;
+  })
+  .map((talk) => {
+    const tempDate = new Date(talk.data.date);
+    const formattedDate = `${tempDate.getFullYear()}.${
+      tempDate.getMonth() + 1
+    }.${tempDate.getDate()}`;
+
+    return {
+      ...talk,
+      title: talk.data.title,
+      date: formattedDate,
+    };
+  });
+---
+
+<Layout>
+  <StrongText>Summary</StrongText>
+  <div class="mt-20px font-sans text-lg">
+    <p>Hi, i am RuiMe.</p>
+    <p>
+      This part is about my recent thought. Including insights from life, gains
+      from work, etc.
+    </p>
+    <p>
+      I want to share these with everyone so that I can see my own growth and
+      changes, and I hope everyone can also gain something from it.
+    </p>
+  </div>
+</Layout>
+
+<style scoped></style>
