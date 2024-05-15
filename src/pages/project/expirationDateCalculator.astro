@@ -1,0 +1,16 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import StrongText from "../../components/StrongText.astro";
+import ExpirationDateCalculatorVue from "../../components/ExpirationDateCalculator.vue";
+---
+
+<Layout>
+  <StrongText>效期计算器</StrongText>
+  <p class="mt-15px flex items-center justify-center w-fit text-lg gap-x-5px">
+    <i class="i-ri-rocket-2-line"></i>
+    <span>用于解决零售行业中效期检查工作</span>
+  </p>
+  <div class="mt-25px">
+    <ExpirationDateCalculatorVue client:visible />
+  </div>
+</Layout>

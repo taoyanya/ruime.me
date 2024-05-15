@@ -1,0 +1,51 @@
+---
+
+---
+
+<div class="relative flex gap-10">
+  <div class="bounce-ball bounce-ball-1 absolute w-20px h-20px bg-black rounded-1/2"></div>
+  <div class="bounce-ball bounce-ball-2 absolute w-20px h-20px bg-black rounded-1/2 left-30px "></div>
+  <div class="bounce-ball bounce-ball-3 absolute w-20px h-20px bg-black rounded-1/2 left-60px "></div>
+  <div class="bounce-ball bounce-ball-4 absolute w-20px h-20px bg-black rounded-1/2 left-90px "></div>
+  <div class="bounce-ball bounce-ball-5 absolute w-20px h-20px bg-black rounded-1/2 left-120px"></div>
+  <div class="bounce-ball bounce-ball-6 absolute w-20px h-20px bg-black rounded-1/2 left-150px"></div>
+  <div class="bounce-ball bounce-ball-7 absolute w-20px h-20px bg-black rounded-1/2 left-180px"></div>
+  <div class="bounce-ball bounce-ball-8 absolute w-20px h-20px bg-black rounded-1/2 left-210px"></div>
+  <div class="bounce-ball bounce-ball-9 absolute w-20px h-20px bg-black rounded-1/2 left-240px"></div>
+</div>
+
+<script>
+//   const bounceBalls = document.querySelectorAll(".bounce-ball");
+//   for (let i = 0; i < bounceBalls.length; i++) {
+//     const ball = bounceBalls[i];
+//     ball.setAttribute('style', `left: ${i * 30}px; animation-delay: ${0.5 * i}s`)
+
+//   }
+</script>
+
+<style scoped lang="scss">
+@keyframes bounce {
+  0% {
+    top: 0;
+  }
+
+  50% {
+    top: 40px;
+  }
+
+  100% {
+    top: 0;
+  }
+}
+
+.bounce-ball {
+  animation: bounce 2s infinite;
+}
+
+@for $i from 1 to 10 {
+  .bounce-ball-#{$i} {
+    left: ($i - 1) * 35px;
+    animation-delay: ($i - 1) * 1000ms;
+  }
+}
+</style>
