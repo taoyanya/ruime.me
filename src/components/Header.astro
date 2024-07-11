@@ -1,19 +1,13 @@
 ---
 import { ViewTransitions } from "astro:transitions";
+import ThemeCheck from "./ThemeCheck.vue";
 ---
 
 <header
-  class="relative z-99 h-60px flex justify-between items-center px-20px box-border"
+  class="relative z-99 h-60px flex justify-end items-center px-20px box-border"
   transition-style
 >
   <ViewTransitions />
-  <a href="/">
-    <img
-      src="/icon.jpg"
-      class="icon w-50px h-50px rounded-md shadow-md ~cp"
-      alt=""
-    />
-  </a>
   <div class="flex justify-between items-center">
     <div class="header-nav-item ~cp">
       <a href="/summary">
@@ -39,6 +33,7 @@ import { ViewTransitions } from "astro:transitions";
           <i class="i-ri-bilibili-line"></i>
         </a>
       </div>
+      <ThemeCheck client:only="vue" />
     </div>
   </div>
 </header>

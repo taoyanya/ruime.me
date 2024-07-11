@@ -3,7 +3,7 @@ import Layout from "./Layout.astro";
 ---
 
 <Layout>
-  <div class="prose">
+  <div class="">
     <slot />
   </div>
 </Layout>
@@ -12,5 +12,10 @@ import Layout from "./Layout.astro";
   html,
   body {
     height: 100%;
+  }
+
+  h2 {
+    font-size: 1.3rem;
+    padding: 5px 0;
   }
 </style>

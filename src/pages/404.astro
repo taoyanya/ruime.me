@@ -9,53 +9,37 @@ import NotFoundImage from "../components/404Image.astro";
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
     <title>404</title>
-    <style>
-      :root {
-        --pink: #fecdd3;
-        --white: #fdfdfd;
-      }
-
-      html,
-      body {
-        margin: 0;
-        padding: 0;
-        height: 100%;
-      }
-
-      *::selection {
-        color: var(--white);
-        background-color: var(--pink);
-      }
-
-      *::-moz-selection {
-        color: var(--white);
-        background-color: var(--pink);
-      }
-
-      *::-webkit-selection {
-        color: var(--white);
-        background-color: var(--pink);
-      }
-    </style>
   </head>
   <body>
-    <div class="h-full ~f-c-c flex-col">
-      <div class="text-4xl font-wide ~f-c-c">404</div>
-      <div class="mr-5px">This page is not found</div>
-      <div class="text-xl box-border pb-2px border-b border-gray-400">
-        <i class="i-ri-arrow-right-circle-line"></i>
-        <a href="/">You can click here to right page</a>
+    <div class="h-full flex justify-center items-center">
+      <div
+        class="w-50px h-50px flex justify-center items-center box-border rounded-1/2 bg-[rgba(0,0,0,0.1)]"
+      >
+        <i class="i-ri-signal-wifi-error-line"></i>
       </div>
-      <NotFoundImage />
+
+      <div class="text-3xl font-cn">当前页面不存在</div>
     </div>
   </body>
 </html>
 
 <style>
+  @import url("../styles/fonts.css");
+
   html,
   body {
     margin: 0;
     padding: 0;
     height: 100%;
+  }
+
+  .text::after {
+    content: "";
+    position: absolute;
+    height: 50%;
+    width: 80%;
+    background: linear-gradient(to right, rgb(248, 113, 113, 0.7), transparent);
+    left: 0;
+    bottom: 0;
   }
 </style>

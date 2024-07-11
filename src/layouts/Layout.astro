@@ -11,8 +11,8 @@ import Header from "../components/Header.astro";
     <meta name="generator" content={Astro.generator} />
     <title>ruirrr</title>
   </head>
-  <body>
-    <div id="layout" class="h-full m-auto">
+  <body id="layout">
+    <div id="layout" class="h-full m-auto p-x-[10px] bg-inherit">
       <Header />
       <article
         class="m-auto py-30px box-border"
@@ -26,9 +26,11 @@ import Header from "../components/Header.astro";
 </html>
 
 <style is:global>
+  @import url("../styles/index.css");
+
   @media screen and (max-width: 800px) {
     article {
-      width: 80%;
+      width: 90%;
     }
   }
 
@@ -38,30 +40,10 @@ import Header from "../components/Header.astro";
     }
   }
 
-  :root {
-    --pink: #fecdd3;
-    --white: #fdfdfd;
-  }
-
   html,
   body {
     height: 100%;
     margin: 0;
     padding: 0;
-  }
-
-  *::selection {
-    color: var(--white);
-    background-color: var(--pink);
-  }
-
-  *::-moz-selection {
-    color: var(--white);
-    background-color: var(--pink);
-  }
-
-  *::-webkit-selection {
-    color: var(--white);
-    background-color: var(--pink);
   }
 </style>

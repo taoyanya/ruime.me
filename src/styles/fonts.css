@@ -1,0 +1,19 @@
+@font-face {
+    font-family: 'UnboundedSans';
+    src: url('../fonts/UnboundedSans.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: "SourceHanSerifSC-Regular";
+    src: url('../fonts/SourceHanSerifSC-Regular.otf') format('truetype');
+}
+
+@font-face {
+    font-family: "SourceHanSerifSC-Heavy";
+    src: url('../fonts/SourceHanSerifSC-Heavy.otf') format('truetype');
+}
+
+@font-face {
+    font-family: "SourceHanSerifSC-Bold";
+    src: url('../fonts/SourceHanSerifSC-Bold.otf') format('truetype');
+}

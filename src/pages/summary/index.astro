@@ -1,40 +1,44 @@
 ---
-import { getCollection } from "astro:content";
 import Layout from "../../layouts/Layout.astro";
-import StrongText from "../../components/StrongText.astro";
+import ArticleItem from "../../components/ArticleItem.astro";
+import { getCollection } from "astro:content";
 
-const rawSummary = await getCollection("summary");
-const summary = rawSummary
-  .sort((a, b) => {
-    return a.data.date < b.data.date ? 1 : -1;
-  })
-  .map((talk) => {
-    const tempDate = new Date(talk.data.date);
-    const formattedDate = `${tempDate.getFullYear()}.${
-      tempDate.getMonth() + 1
-    }.${tempDate.getDate()}`;
+interface Post {
+  title: string;
+  date: string;
+  tag: string;
+  desc: string;
+}
 
-    return {
-      ...talk,
-      title: talk.data.title,
-      date: formattedDate,
-    };
-  });
+const allSummaryPosts = await getCollection("summary");
+console.log(allSummaryPosts);
+const posts = allSummaryPosts.map((item) => {
+  const data = item.data as Post;
+  return {
+    ...data,
+    id: item.id,
+    slug: item.slug,
+  };
+});
+
+const pushTo = (path: string) => {};
 ---
 
 <Layout>
-  <StrongText>Summary</StrongText>
-  <div class="mt-20px font-sans text-lg">
-    <p>Hi, i am RuiMe.</p>
-    <p>
-      This part is about my recent thought. Including insights from life, gains
-      from work, etc.
-    </p>
-    <p>
-      I want to share these with everyone so that I can see my own growth and
-      changes, and I hope everyone can also gain something from it.
-    </p>
-  </div>
+  {
+    posts.map((post) => {
+      return (
+        <a class="w-fit" href={`/summary/${post.slug}`}>
+          <ArticleItem
+            title={post.title}
+            date={post.date}
+            tag={post.tag}
+            desc={post.desc}
+          />
+        </a>
+      );
+    })
+  }
 </Layout>
 
 <style scoped></style>

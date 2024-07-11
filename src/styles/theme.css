@@ -1,0 +1,19 @@
+:root {
+    --light-text-color: #000;
+    --light-bg-color: #fff;
+
+    --dark-text-color: #fff;
+    --dark-bg-color: #1e293b;
+
+    --middle-color: rgb(128, 128, 128);
+}
+
+body.light-theme {
+    color: var(--light-text-color);
+    background-color: var(--light-bg-color);
+}
+
+body.dark-theme {
+    color: var(--dark-text-color);
+    background-color: var(--dark-bg-color);
+}

@@ -1,0 +1,24 @@
+---
+const { frontmatter } = Astro.props;
+---
+
+<html>
+  <div class="p-b-10px box-border b-b">
+    <div class="text-2xl font-cn">{frontmatter.title}</div>
+    <div class="text-sm flex items-center gap-x-[5px] mt-5px">
+      <div>
+        <i class="i-iconoir-calendar"></i>
+        <span>{frontmatter.date}</span>
+      </div>
+      <div>
+        <i class="i-iconoir-hashtag"></i>
+        <span>{frontmatter.tag}</span>
+      </div>
+    </div>
+  </div>
+  <div class="font-cn mt-30px">
+    <slot />
+  </div>
+
+
+</html>

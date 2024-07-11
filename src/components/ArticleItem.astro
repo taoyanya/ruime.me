@@ -1,0 +1,33 @@
+---
+interface Props {
+  title: string;
+  date: string;
+  desc: string;
+  tag: string;
+}
+
+const { title, date, desc, tag } = Astro.props;
+---
+
+<div
+  class="article-item ~cp font-cn flex flex-col gap-y-[10px] p-b-[10px] box-border"
+>
+  <div class="text-2xl">{title}</div>
+  <div class="text-base">{desc}</div>
+  <div class="text-sm flex items-center gap-x-[5px]">
+    <div>
+      <i class="i-iconoir-calendar"></i>
+      <span>{date}</span>
+    </div>
+    <div>
+      <i class="i-iconoir-hashtag"></i>
+      <span>{tag}</span>
+    </div>
+  </div>
+</div>
+
+<style>
+  .article-item {
+    border-bottom: 1px solid #e5e7eb;
+  }
+</style>
