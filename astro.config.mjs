@@ -1,12 +1,12 @@
 import { defineConfig } from "astro/config";
 import Unocss from "unocss/astro";
-import mdx from "@astrojs/mdx";
+// import mdx from "@astrojs/mdx";
 // import vue from "@astrojs/vue";
 
 // https://astro.build/config
 export default defineConfig({
   integrations: [
-    mdx(),
+    // mdx(),
     Unocss({
       injectReset: true,
     }),
