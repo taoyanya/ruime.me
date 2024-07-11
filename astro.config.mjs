@@ -1,5 +1,4 @@
 import { defineConfig } from "astro/config";
-import remarkToc from "remark-toc";
 import Unocss from "unocss/astro";
 import mdx from "@astrojs/mdx";
 import vue from "@astrojs/vue";
@@ -14,7 +13,6 @@ export default defineConfig({
     vue(),
   ],
   markdown: {
-    remarkPlugins: [remarkToc],
     shikiConfig: {
       theme: "material-theme-lighter",
       wrap: true,
