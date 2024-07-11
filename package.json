@@ -13,7 +13,6 @@
     "@astrojs/check": "^0.3.1",
     "@astrojs/mdx": "^1.1.5",
     "@astrojs/vercel": "^5.2.0",
-    "@astrojs/vue": "^4.5.0",
     "astro": "^4.0.0",
     "sass": "^1.77.1",
     "transition-style": "^0.1.3",
