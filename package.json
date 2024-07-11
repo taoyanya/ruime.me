@@ -14,7 +14,7 @@
     "@astrojs/mdx": "^1.1.4",
     "@astrojs/vercel": "^5.2.0",
     "@astrojs/vue": "^4.5.0",
-    "astro": "^4.11.5",
+    "astro": "^4.0.0",
     "remark-toc": "^9.0.0",
     "sass": "^1.77.1",
     "transition-style": "^0.1.3",
