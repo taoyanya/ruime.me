@@ -22,11 +22,6 @@ export default defineConfig({
     presetWebFonts({
       provider: "google",
       fonts: {
-        sans: "Roboto",
-        lato: {
-          name: "Zodiak",
-          italic: true,
-        },
         cn: "SourceHanSerifSC-Regular",
         "cn-bold": "SourceHanSerifSC-Bold",
         "cn-heavy": "SourceHanSerifSC-Heavy",
