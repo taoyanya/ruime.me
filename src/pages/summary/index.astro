@@ -11,7 +11,6 @@ interface Post {
 }
 
 const allSummaryPosts = await getCollection("summary");
-console.log(allSummaryPosts);
 const posts = allSummaryPosts.map((item) => {
   const data = item.data as Post;
   return {
@@ -20,8 +19,6 @@ const posts = allSummaryPosts.map((item) => {
     slug: item.slug,
   };
 });
-
-const pushTo = (path: string) => {};
 ---
 
 <Layout>

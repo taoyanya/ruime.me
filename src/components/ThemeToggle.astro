@@ -1,0 +1,54 @@
+---
+
+---
+
+<div id="theme-icon" class="header-nav-item ~cp" @click="handleCheck">
+  <i id="light-icon" class="light-icon i-iconoir-sun-light"></i>
+  <i id="dark-icon" class="dark-icon i-iconoir-half-moon"></i>
+</div>
+
+<script>
+  const THEME_MODE = {
+    LIGHT_MODE: "light-theme",
+    DARK_MODE: "dark-theme",
+  };
+
+  window.onload = function () {};
+
+  const body = document.querySelector("body");
+  const themeIcon = document.getElementById("theme-icon");
+  const lightIcon = document.getElementById("light-icon");
+  const darkIcon = document.getElementById("dark-icon");
+  let dark_mode = localStorage.getItem("THEME_MODE") === THEME_MODE.DARK_MODE;
+
+  // 启动dark
+  function enableDarkMode() {
+    lightIcon!.style.display = "none";
+    darkIcon!.style.display = "block";
+    body?.classList.remove(THEME_MODE.LIGHT_MODE);
+    body?.classList.add(THEME_MODE.DARK_MODE);
+  }
+
+  // 禁止dark
+  function disableDarkMode() {
+    lightIcon!.style.display = "block";
+    darkIcon!.style.display = "none";
+    body?.classList.remove(THEME_MODE.DARK_MODE);
+    body?.classList.add(THEME_MODE.LIGHT_MODE);
+  }
+
+  // 初始化判断当前主题
+  dark_mode ? enableDarkMode() : disableDarkMode();
+
+  themeIcon!.addEventListener("click", () => {
+    const current_dark_mode = !dark_mode;
+
+    console.log(current_dark_mode);
+    current_dark_mode ? enableDarkMode() : disableDarkMode();
+    localStorage.setItem(
+      "THEME_MODE",
+      current_dark_mode ? THEME_MODE.DARK_MODE : THEME_MODE.LIGHT_MODE
+    );
+    dark_mode = current_dark_mode;
+  });
+</script>

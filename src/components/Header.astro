@@ -1,6 +1,7 @@
 ---
 import { ViewTransitions } from "astro:transitions";
 // import ThemeCheck from "./ThemeCheck.vue";
+import ThemeToggle from "./ThemeToggle.astro";
 ---
 
 <header
@@ -34,6 +35,7 @@ import { ViewTransitions } from "astro:transitions";
         </a>
       </div>
       <!-- <ThemeCheck client:only="vue" /> -->
+      <ThemeToggle />
     </div>
   </div>
 </header>
