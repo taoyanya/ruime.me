@@ -17,3 +17,7 @@
     font-family: "SourceHanSerifSC-Bold";
     src: url('../fonts/SourceHanSerifSC-Bold.otf') format('truetype');
 }
+
+.font-cn {
+    font-family: "SourceHanSerifSC-Regular";
+}

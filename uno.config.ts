@@ -1,5 +1,4 @@
 import { defineConfig } from "unocss";
-import presetWebFonts from "@unocss/preset-web-fonts";
 import presetUno from "@unocss/preset-uno";
 import presetIcons from "@unocss/preset-icons";
 import { presetTypography } from "@unocss/preset-typography";
@@ -17,16 +16,6 @@ export default defineConfig({
           margin: "0.5rem 0",
           "font-size": "1.2rem",
         },
-      },
-    }),
-    presetWebFonts({
-      provider: "google",
-      fonts: {
-        cn: "SourceHanSerifSC-Regular",
-        "cn-bold": "SourceHanSerifSC-Bold",
-        "cn-heavy": "SourceHanSerifSC-Heavy",
-        wide: "Black Ops One",
-        xs: "Liu Jian Mao Cao",
       },
     }),
     presetIcons({
